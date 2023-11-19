@@ -5,5 +5,10 @@
       <NuxtPage />
     </div>
     <Footer />
+    <Analytics />
   </div>
 </template>
+
+<script setup>
+  import { Analytics } from '@vercel/analytics/react';
+</script>
