@@ -2,10 +2,14 @@
     <div class="flex flex-col">
         <div class="flex flex-col sm:min-h-[calc(100vh-3.25rem)] min-h-[calc(100vh-4rem)]">
             <a
-                href="https://github.com/ferrariofilippo/SaveApp_Kotlin/tree/master/app/release"
-                class="my-5 mx-auto rounded-lg text-white bg-emerald-700 dark:bg-emerald-500 py-1 px-2 border-2 border-emerald-700 dark:border-emerald-500 hover:border-neutral-700 dark:hover:border-white"
+                class="my-5 mx-auto"
+                href='https://play.google.com/store/apps/details?id=com.ferrariofilippo.saveapp&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'
             >
-                Download
+                <img
+                    class="h-16"
+                    alt='Get it on Google Play'
+                    src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'
+                />
             </a>
             <div class="flex md:flex-row flex-col min-h-[calc(100vh-4rem-4rem)] w-screen">
                 <div class="md:w-1/2 w-full min-h-full flex flex-col justify-center">
