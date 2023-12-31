@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col">
-        <div class="flex flex-col sm:min-h-[calc(100vh-3.25rem)] min-h-[calc(100vh-4rem)]">
+        <div class="flex flex-col md:min-h-[calc(100vh-3.25rem)] min-h-[calc(100vh-4rem)]">
             <a
                 class="my-5 mx-auto"
                 href='https://play.google.com/store/apps/details?id=com.ferrariofilippo.saveapp&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'

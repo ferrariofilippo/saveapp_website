@@ -5,12 +5,12 @@
 ::selection {
     background-color: #047857;
     color: #FFF;
-  }
+}
   
-  ::-moz-selection {
+::-moz-selection {
     background-color: #047857;
     color: #FFF;
-  }
+}
 
 ::-webkit-scrollbar {
     width: 5px;

@@ -1,7 +1,7 @@
 <template>
     <header>
         <nav
-            class="flex justify-between w-screen px-3 py-1 sm:h-[3.25rem] h-16 border-b-2 border-neutral-100 dark:bg-neutral-900 dark:border-neutral-800"
+            class="flex justify-between w-screen px-3 py-1 md:h-[3.25rem] h-16 border-b-2 border-neutral-100 dark:bg-neutral-900 dark:border-neutral-800"
         >
             <div class="flex gap-5">
                 <a class="flex" href="/">
@@ -18,7 +18,7 @@
                         SaveApp
                     </span>
                 </a>
-                <ul class="sm:flex hidden gap-3 my-auto">
+                <ul class="md:flex hidden gap-3 my-auto">
                     <li>
                         <a
                             href="/"
@@ -32,10 +32,21 @@
                     </li>
                     <li>
                         <a
-                            href="/contribute"
+                            href="/docs"
                             class="flex hover:text-emerald-700 bg-neutral-50 border hover:border-emerald-700 border-neutral-100 p-1 rounded-lg dark:hover:text-emerald-500 dark:border-neutral-900 dark:bg-neutral-700"
                         >
                             <DocumentTextIcon class="h-5 w-5 my-auto mx-1" />
+                            <span class="tracking-tight pe-1">
+                                Docs
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="/contribute"
+                            class="flex hover:text-emerald-700 bg-neutral-50 border hover:border-emerald-700 border-neutral-100 p-1 rounded-lg dark:hover:text-emerald-500 dark:border-neutral-900 dark:bg-neutral-700"
+                        >
+                            <CommandLineIcon class="h-5 w-5 my-auto mx-1" />
                             <span class="tracking-tight pe-1">
                                 Contribute
                             </span>
@@ -59,24 +70,24 @@
                     id="source_code"
                     aria-label="Explore the source code on GitHub."
                     href="https://github.com/ferrariofilippo/SaveApp_Kotlin"
-                    class="sm:block hidden hover:text-emerald-700 my-auto hover:border hover:border-emerald-700 hover:rounded-lg p-2 dark:hover:border-emerald-500 dark:hover:text-emerald-500"
+                    class="md:block hidden hover:text-emerald-700 my-auto hover:border hover:border-emerald-700 hover:rounded-lg p-2 dark:hover:border-emerald-500 dark:hover:text-emerald-500"
                 >
-                    <CodeBracketIcon class="sm:h-5 h-7 sm:w-5 w-7" />
+                    <CodeBracketIcon class="md:h-5 h-7 md:w-5 w-7" />
                 </a>
                 <button
                     id="dropdown-menu-toggle"
                     aria-label="Menu"
                     type="button"
                     @click="toggleDropdown"
-                    class="sm:hidden block hover:text-emerald-700 my-auto hover:border hover:border-emerald-700 hover:rounded-lg p-2 dark:hover:border-emerald-500 dark:hover:text-emerald-500"
+                    class="md:hidden block hover:text-emerald-700 my-auto hover:border hover:border-emerald-700 hover:rounded-lg p-2 dark:hover:border-emerald-500 dark:hover:text-emerald-500"
                 >
-                    <Bars3Icon class="sm:h-5 h-7 sm:w-5 w-7" />
+                    <Bars3Icon class="md:h-5 h-7 md:w-5 w-7" />
                 </button>
             </div>
         </nav>
         <div
             id="dropdown-menu"
-            class="z-50 hidden rounded-b-3xl w-full shadow bg-neutral-50 dark:bg-neutral-800 px-5 py-5 sm:top-[3.25rem] top-16"
+            class="z-50 md:hidden hidden rounded-b-3xl w-full shadow bg-neutral-50 dark:bg-neutral-800 px-5 py-5 md:top-[3.25rem] top-16"
             style="position: absolute;"
         >
             <ul class="flex flex-col gap-3 my-auto">
@@ -93,10 +104,21 @@
                 </li>
                 <li class="mx-auto">
                     <a
-                        href="/contribute"
+                        href="/docs"
                         class="flex hover:text-emerald-700 bg-neutral-50 border hover:border-emerald-700 border-neutral-50 p-1 rounded-lg dark:hover:text-emerald-500 dark:border-neutral-800 dark:bg-neutral-700"
                     >
                         <DocumentTextIcon class="h-5 w-5 my-auto mx-1" />
+                        <span class="tracking-tight pe-1">
+                            Docs
+                        </span>
+                    </a>
+                </li>
+                <li class="mx-auto">
+                    <a
+                        href="/contribute"
+                        class="flex hover:text-emerald-700 bg-neutral-50 border hover:border-emerald-700 border-neutral-50 p-1 rounded-lg dark:hover:text-emerald-500 dark:border-neutral-800 dark:bg-neutral-700"
+                    >
+                        <CommandLineIcon class="h-5 w-5 my-auto mx-1" />
                         <span class="tracking-tight pe-1">
                             Contribute
                         </span>
@@ -119,10 +141,12 @@
 </template>
 
 <script setup>
-import { HomeIcon, CodeBracketIcon, BugAntIcon, DocumentTextIcon, Bars3Icon } from "@heroicons/vue/24/outline";
+import { HomeIcon, CodeBracketIcon, BugAntIcon, DocumentTextIcon, Bars3Icon, CommandLineIcon } from "@heroicons/vue/24/outline";
 
 var isDropdownHidden = true;
 const msDuration = 800;
+
+onMounted(() => window.onresize = onWidthChanged);
 
 function toggleDropdown() {
     const menu = document.getElementById('dropdown-menu');
@@ -143,6 +167,12 @@ function toggleDropdown() {
     }
 
     isDropdownHidden = !isDropdownHidden;
+}
+
+function onWidthChanged() {
+    if (window.innerWidth > 768 && !isDropdownHidden) {
+        toggleDropdown()
+    } 
 }
 </script>
 
