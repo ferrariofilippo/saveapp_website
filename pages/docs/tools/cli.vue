@@ -16,7 +16,9 @@
             Install <a href="https://matplotlib.org/" class="underline hover:text-emerald-700 dark:hover:text-emerald-500">matplotlib</a>:
             <div class="py-2 px-5 rounded-lg bg-neutral-100 dark:bg-neutral-700 m-2 w-full flex justify-between">
                 <span class="my-auto">
-                    python3 -m pip install matplotlib
+                    <code>
+                        python3 -m pip install matplotlib
+                    </code>
                 </span>
                 <button
                     @click="copy('python3 -m pip install matplotlib', 'matplotlib')"
@@ -30,13 +32,17 @@
         <li class="mb-3">
             Set your <span class="text-emerald-700 dark:text-emerald-500 font-semibold">.csv</span> file path:
             <div class="py-2 px-5 rounded-lg bg-neutral-100 dark:bg-neutral-700 m-2 w-full">
-                YOUR_FILE_PATH = 'INSERT PATH TO YOUR FILE HERE'
+                <code>
+                    YOUR_FILE_PATH = 'INSERT PATH TO YOUR FILE HERE'
+                </code>
             </div>
         </li>
         <li class="mb-3">
             Set your custom thresholds:
             <div class="py-2 px-5 rounded-lg bg-neutral-100 dark:bg-neutral-700 m-2 w-full">
-                thresholds = [ 10, 50, 200, 1000 ]
+                <code>
+                    thresholds = [ 10, 50, 200, 1000 ]
+                </code>
             </div>
         </li>
         <li>
@@ -50,7 +56,9 @@
         Except for <span class="text-emerald-700 dark:text-emerald-500 font-semibold">-h</span>, 
         each option should be preceeded by the list of income tags ids. See the example below:
         <div class="py-2 px-5 rounded-lg bg-neutral-100 dark:bg-neutral-700 m-2 w-full">
-            python3 ./main.py 1 2 -g
+            <code>
+                python3 ./main.py 1 2 -g
+            </code>
         </div>
     </p>
     <ul class="list-disc list-inside">
