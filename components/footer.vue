@@ -19,7 +19,7 @@
                     </span>
                 </a>
                 <span class="ps-3 text-neutral-600 sm:text-sm text-md dark:text-neutral-300 sm:text-left text-center">
-                    Copyright &copy; 2023 
+                    Copyright &copy; 2024 
                     <a 
                         class="hover:text-emerald-700 md:text-sm sm:text-md text-lg dark:hover:text-emerald-500"
                         href="https://ferrariofilippo.vercel.app"
