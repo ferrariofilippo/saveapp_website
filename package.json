@@ -15,7 +15,7 @@
     "autoprefixer": "^10.4.16",
     "google-fonts": "^1.0.0",
     "heroicons": "^2.0.18",
-    "nuxt": "^3.10.0",
+    "nuxt": "^3.11.1",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.5",
     "vue": "^3.3.8",
