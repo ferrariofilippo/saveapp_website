@@ -168,7 +168,10 @@ useHead({
         { name: 'twitter:description', content: 'SaveApp, an open-source budgeting Android app.' },
         { name: 'twitter:image', content: '/logo_512.png' },
         { name: 'twitter:card', content: 'summary' },
-    ]
+    ],
+    link: [
+        { rel: 'canonical', href: 'https://www.saveapp.cloud/' },
+    ],
 })
 
 const data = reactive({
