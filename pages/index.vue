@@ -183,16 +183,16 @@ function getFeatures() {
     return [
         new Feature(
             0,
-            'Record Movements',
-            'Save your movements to track them.',
-            '/new_movement_page.png',
-            'Create movement page',
+            'Record Transactions',
+            'Save your transactions to track them.',
+            '/transaction_page.png',
+            'Create transaction page',
             true
         ),
         new Feature(
             1,
             'Subscriptions',
-            'Use subscriptions to manage recurring movements.',
+            'Use subscriptions to manage recurring transactions.',
             '/subscriptions_page.png',
             'Subscriptions page'
         ),
@@ -206,14 +206,14 @@ function getFeatures() {
         new Feature(
             3,
             'Tags',
-            'Organize your movements using custom tags.',
+            'Organize your transactions using custom tags.',
             '/history_page.png',
             'History page'
         ),
         new Feature(
             4,
             'Graphs',
-            'Visualize movements\' statistics using graphs.',
+            'Visualize transactions\' statistics using graphs.',
             '/statistics_page.png',
             'Statistics page'
         ),
