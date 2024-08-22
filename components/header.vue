@@ -1,5 +1,30 @@
 <template>
     <header>
+        <div 
+            id="cookieBanner"
+            class="hidden flex bg-neutral-100 dark:bg-neutral-950 text-sm justify-between px-1"
+        >
+            <span class="my-auto">
+                This website uses analytical cookies.
+                <a
+                    id="go_to_cookies"
+                    aria-label="See cookie policy"
+                    href="/cookies"
+                    class="hover:text-emerald-500 my-auto p-1 "
+                >
+                    See Policy
+                </a>
+            </span>
+            <button
+                id="close_cookie_button"
+                aria-label="Close cookies banner"
+                type="button"
+                @click="closeCookieBanner"
+                class="block  hover:text-emerald-500 my-auto p-1"
+            >
+                <XMarkIcon class="md:h-5 h-7 md:w-5 w-7" />
+            </button>
+        </div>
         <nav
             class="flex justify-between w-screen px-3 py-1 md:h-[3.25rem] h-16 border-b-2 border-neutral-100 dark:bg-neutral-900 dark:border-neutral-800"
         >
@@ -141,12 +166,20 @@
 </template>
 
 <script setup>
-import { HomeIcon, CodeBracketIcon, BugAntIcon, DocumentTextIcon, Bars3Icon, CommandLineIcon } from "@heroicons/vue/24/outline";
+import { HomeIcon, CodeBracketIcon, BugAntIcon, DocumentTextIcon, Bars3Icon, CommandLineIcon, XMarkIcon } from "@heroicons/vue/24/outline";
 
 var isDropdownHidden = true;
 const msDuration = 800;
 
-onMounted(() => window.onresize = onWidthChanged);
+onMounted(() => {
+    window.onresize = onWidthChanged;
+
+    const bannerHidden = sessionStorage.getItem('cookiesBannerHidden');
+    if (bannerHidden === null ||  bannerHidden == false) {
+        const banner = document.getElementById('cookieBanner');
+        banner.classList.remove('hidden');
+    }
+});
 
 function toggleDropdown() {
     const menu = document.getElementById('dropdown-menu');
@@ -167,6 +200,12 @@ function toggleDropdown() {
     }
 
     isDropdownHidden = !isDropdownHidden;
+}
+
+function closeCookieBanner() {
+    const banner = document.getElementById('cookieBanner');
+    banner.classList.add('hidden');
+    sessionStorage.setItem('cookiesBannerHidden', true);
 }
 
 function onWidthChanged() {
