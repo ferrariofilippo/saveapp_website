@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   app: {
     head: {
       link: [
@@ -15,17 +16,22 @@ export default defineNuxtConfig({
       },
     },
   },
+
   css: ["~/assets/css/main.css"],
+
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     }
   },
+
   ssr: true,
+
   typescript: {
     strict: true,
   },
+
   modules: [
     "@nuxt/image",
     [
@@ -39,9 +45,12 @@ export default defineNuxtConfig({
       },
     ],
   ],
+
   nitro: {
     prerender: {
       routes: ['/sitemap.xml']
     }
-  }
+  },
+
+  compatibilityDate: '2024-08-22'
 })

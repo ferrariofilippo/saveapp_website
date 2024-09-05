@@ -1,5 +1,5 @@
 <template>
-    <h1 class="text-3xl text-emerald-700 font-semibold dark:text-emerald-500 mb-3">
+    <h1 class="text-6xl text-emerald-700 font-semibold dark:text-emerald-500 mb-2">
         Overview
     </h1>
     <p>
@@ -10,7 +10,7 @@
         Thanks to the <span class="text-emerald-700 dark:text-emerald-500 font-semibold">export</span>
         feature, you can easily access your data in '.csv' format.
     </p>
-    <h3 class="text-2xl text-emerald-700 font-semibold dark:text-emerald-500 mt-6 mb-2">
+    <h3 class="text-2xl text-emerald-700 font-semibold dark:text-emerald-500 mt-6">
         Community Support
     </h3>
     <p>
