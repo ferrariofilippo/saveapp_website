@@ -13,7 +13,7 @@
                 </a>
                 <span
                     class="md:uppercase md:text-xs md:ps-10 ps-3 text-neutral-600 sm:text-md text-md dark:text-neutral-300 sm:text-left text-center">
-                    Copyright &copy; 2024
+                    Copyright &copy; {{ year }}
                     <a class="hover:text-emerald-700 md:text-xs sm:text-md text-lg dark:hover:text-emerald-500"
                         href="https://ferrariofilippo.vercel.app">
                         Ferrario Filippo
@@ -94,5 +94,5 @@
 </template>
 
 <script setup>
-
+    const year = new Date().getFullYear();
 </script>
