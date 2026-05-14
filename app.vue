@@ -1,11 +1,11 @@
 <template>
-  <div class="flex flex-col justify-between bg-neutral-50 dark:bg-neutral-800 dark:text-white">
+  <div class="flex flex-col min-h-screen bg-neutral-50 dark:bg-neutral-800 dark:text-white">
     <Header />
-    <div class="md:min-h-[calc(100vh-3.25rem)] min-h-[calc(100vh-4rem)]">
+    <main class="flex-1">
       <NuxtLayout>
         <NuxtPage />
       </NuxtLayout>
-    </div>
+    </main>
     <Footer />
   </div>
 </template>

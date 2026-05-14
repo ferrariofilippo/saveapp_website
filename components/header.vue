@@ -1,117 +1,102 @@
 <template>
-    <header>
+    <header class="sticky top-0 z-50">
         <div id="cookieBanner"
-            class="hidden flex bg-neutral-100 dark:bg-neutral-800 text-sm justify-between px-1 border-b border-neutral-300 dark:border-neutral-700">
-            <span class="my-auto">
+            class="hidden flex bg-neutral-100 dark:bg-neutral-800 text-sm justify-between px-3 py-1.5 border-b border-neutral-200 dark:border-neutral-700">
+            <span class="my-auto text-neutral-600 dark:text-neutral-300">
                 This website uses analytical cookies.
                 <a id="go_to_cookies" aria-label="See cookie policy" href="/cookies"
-                    class="hover:text-emerald-500 my-auto p-1 ">
+                    class="text-emerald-700 hover:underline dark:text-emerald-400 font-medium">
                     See Policy
                 </a>
             </span>
             <button id="close_cookie_button" aria-label="Close cookies banner" type="button" @click="closeCookieBanner"
-                class="block hover:text-emerald-500 my-auto p-1">
-                <XMarkIcon class="md:h-5 h-7 md:w-5 w-7" />
+                class="text-neutral-400 hover:text-emerald-700 dark:hover:text-emerald-400 p-1">
+                <XMarkIcon class="h-4 w-4" />
             </button>
         </div>
-        <nav class="flex justify-between w-screen px-3 py-1 md:h-[3.25rem] h-16 bg-neutral-50 dark:bg-neutral-800">
-            <div class="flex gap-5">
-                <a class="flex" href="/">
-                    <NuxtImg src="/logo_512.png" class="rounded-full my-auto" width="40" height="40" densities="x2 x2"
+        <nav class="bg-white/90 dark:bg-neutral-900/90 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-800">
+            <div class="max-w-6xl mx-auto flex justify-between items-center px-4 md:h-[3.25rem] h-14">
+                <a class="flex items-center gap-2" href="/">
+                    <NuxtImg src="/logo_512.png" class="rounded-full" width="32" height="32" densities="x2 x2"
                         preload alt="SaveApp logo" />
-                    <span class="my-auto text-2xl font-bold text-emerald-700 ms-2 dark:text-emerald-500">
-                        SaveApp
-                    </span>
+                    <span class="text-xl font-bold text-emerald-700 dark:text-emerald-500">SaveApp</span>
                 </a>
-                <ul class="md:flex hidden gap-3 my-auto">
+                <ul class="hidden md:flex items-center gap-6 text-sm font-medium text-neutral-600 dark:text-neutral-400">
                     <li>
-                        <a href="/"
-                            class="flex hover:text-emerald-700 bg-neutral-100 border-2 hover:border-emerald-700 border-neutral-200 p-1 rounded-lg dark:hover:text-emerald-500 dark:border-neutral-600 dark:bg-neutral-700">
-                            <HomeIcon class="h-5 w-5 my-auto mx-1" />
-                            <span class="tracking-tight pe-1">
-                                Home
-                            </span>
+                        <a href="/" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">
+                            Home
                         </a>
                     </li>
                     <li>
-                        <a href="/docs"
-                            class="flex hover:text-emerald-700 bg-neutral-100 border-2 hover:border-emerald-700 border-neutral-200 p-1 rounded-lg dark:hover:text-emerald-500 dark:border-neutral-600 dark:bg-neutral-700">
-                            <DocumentTextIcon class="h-5 w-5 my-auto mx-1" />
-                            <span class="tracking-tight pe-1">
-                                Docs
-                            </span>
+                        <a href="/docs" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">
+                            Docs
                         </a>
                     </li>
                     <li>
-                        <a href="/contribute"
-                            class="flex hover:text-emerald-700 bg-neutral-100 border-2 hover:border-emerald-700 border-neutral-200 p-1 rounded-lg dark:hover:text-emerald-500 dark:border-neutral-600 dark:bg-neutral-700">
-                            <CommandLineIcon class="h-5 w-5 my-auto mx-1" />
-                            <span class="tracking-tight pe-1">
-                                Contribute
-                            </span>
+                        <a href="/contribute" class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">
+                            Contribute
                         </a>
                     </li>
                     <li>
                         <a href="https://github.com/ferrariofilippo/SaveApp_Kotlin/issues/"
-                            class="flex hover:text-emerald-700 bg-neutral-100 border-2 hover:border-emerald-700 border-neutral-200 p-1 rounded-lg dark:hover:text-emerald-500 dark:border-neutral-600 dark:bg-neutral-700">
-                            <BugAntIcon class="h-5 w-5 my-auto mx-1" />
-                            <span class="tracking-tight pe-1">
-                                Report a bug
-                            </span>
+                            class="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">
+                            Report a bug
                         </a>
                     </li>
                 </ul>
-            </div>
-            <div class="flex gap-x-2">
-                <a id="source_code" aria-label="Explore the source code on GitHub."
-                    href="https://github.com/ferrariofilippo/SaveApp_Kotlin"
-                    class="md:block hidden hover:text-emerald-700 my-auto border-2 border-neutral-200 dark:border-neutral-600 hover:border-emerald-700 rounded-lg p-2 dark:hover:border-emerald-500 dark:hover:text-emerald-500">
-                    <CodeBracketIcon class="md:h-5 h-7 md:w-5 w-7" />
-                </a>
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="https://github.com/ferrariofilippo/SaveApp_Kotlin"
+                        aria-label="View source on GitHub"
+                        class="text-sm font-medium text-neutral-600 dark:text-neutral-400 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors">
+                        GitHub
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.ferrariofilippo.saveapp"
+                        class="bg-emerald-700 hover:bg-emerald-800 dark:bg-emerald-600 dark:hover:bg-emerald-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors">
+                        Download
+                    </a>
+                </div>
                 <button id="dropdown-menu-toggle" aria-label="Menu" type="button" @click="toggleDropdown"
-                    class="md:hidden block hover:text-emerald-700 my-auto hover:border hover:border-emerald-700 hover:rounded-lg p-2 dark:hover:border-emerald-500 dark:hover:text-emerald-500">
-                    <Bars3Icon class="md:h-5 h-7 md:w-5 w-7" />
+                    class="md:hidden text-neutral-600 dark:text-neutral-400 hover:text-emerald-700 dark:hover:text-emerald-400 p-2">
+                    <Bars3Icon class="h-6 w-6" />
                 </button>
             </div>
         </nav>
         <div id="dropdown-menu"
-            class="z-50 md:hidden hidden rounded-b-3xl border-neutral-100 dark:border-neutral-700 border-b-2 w-full shadow bg-neutral-50 dark:bg-neutral-800 px-5 py-5 md:top-[3.25rem] top-16"
+            class="z-50 md:hidden hidden absolute w-full shadow-lg bg-white dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800 px-4 py-3"
             style="position: absolute;">
-            <ul class="flex flex-wrap gap-y-2 gap-x-1 my-auto mx-8">
-                <li class="mx-auto">
+            <ul class="flex flex-col gap-1">
+                <li>
                     <a href="/"
-                        class="flex hover:text-emerald-700 bg-neutral-100 border-2 hover:border-emerald-700 border-neutral-200 p-1 rounded-lg dark:hover:text-emerald-500 dark:border-neutral-600 dark:bg-neutral-700">
-                        <HomeIcon class="h-5 w-5 my-auto mx-1" />
-                        <span class="tracking-tight pe-1">
-                            Home
-                        </span>
+                        class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-700 dark:text-neutral-300 font-medium transition-colors">
+                        <HomeIcon class="h-5 w-5 text-emerald-700 dark:text-emerald-500 shrink-0" />
+                        Home
                     </a>
                 </li>
-                <li class="mx-auto">
+                <li>
                     <a href="/docs"
-                        class="flex hover:text-emerald-700 bg-neutral-100 border-2 hover:border-emerald-700 border-neutral-200 p-1 rounded-lg dark:hover:text-emerald-500 dark:border-neutral-600 dark:bg-neutral-700">
-                        <DocumentTextIcon class="h-5 w-5 my-auto mx-1" />
-                        <span class="tracking-tight pe-1">
-                            Docs
-                        </span>
+                        class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-700 dark:text-neutral-300 font-medium transition-colors">
+                        <DocumentTextIcon class="h-5 w-5 text-emerald-700 dark:text-emerald-500 shrink-0" />
+                        Docs
                     </a>
                 </li>
-                <li class="mx-auto">
+                <li>
                     <a href="/contribute"
-                        class="flex hover:text-emerald-700 bg-neutral-100 border-2 hover:border-emerald-700 border-neutral-200 p-1 rounded-lg dark:hover:text-emerald-500 dark:border-neutral-600 dark:bg-neutral-700">
-                        <CommandLineIcon class="h-5 w-5 my-auto mx-1" />
-                        <span class="tracking-tight pe-1">
-                            Contribute
-                        </span>
+                        class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-700 dark:text-neutral-300 font-medium transition-colors">
+                        <CommandLineIcon class="h-5 w-5 text-emerald-700 dark:text-emerald-500 shrink-0" />
+                        Contribute
                     </a>
                 </li>
-                <li class="mx-auto">
+                <li>
                     <a href="https://github.com/ferrariofilippo/SaveApp_Kotlin/issues/"
-                        class="flex hover:text-emerald-700 bg-neutral-100 border-2 hover:border-emerald-700 border-neutral-200 p-1 rounded-lg dark:hover:text-emerald-500 dark:border-neutral-600 dark:bg-neutral-700">
-                        <BugAntIcon class="h-5 w-5 my-auto mx-1" />
-                        <span class="tracking-tight pe-1">
-                            Report a bug
-                        </span>
+                        class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-700 dark:text-neutral-300 font-medium transition-colors">
+                        <BugAntIcon class="h-5 w-5 text-emerald-700 dark:text-emerald-500 shrink-0" />
+                        Report a bug
+                    </a>
+                </li>
+                <li class="mt-2 pt-2 border-t border-neutral-200 dark:border-neutral-700">
+                    <a href="https://play.google.com/store/apps/details?id=com.ferrariofilippo.saveapp"
+                        class="flex justify-center bg-emerald-700 hover:bg-emerald-800 text-white font-semibold px-4 py-2.5 rounded-lg transition-colors">
+                        Download on Android
                     </a>
                 </li>
             </ul>
@@ -120,7 +105,7 @@
 </template>
 
 <script setup>
-import { HomeIcon, CodeBracketIcon, BugAntIcon, DocumentTextIcon, Bars3Icon, CommandLineIcon, XMarkIcon } from "@heroicons/vue/24/outline";
+import { HomeIcon, BugAntIcon, DocumentTextIcon, Bars3Icon, CommandLineIcon, XMarkIcon } from "@heroicons/vue/24/outline";
 
 var isDropdownHidden = true;
 const msDuration = 800;
@@ -179,22 +164,12 @@ function onWidthChanged() {
 }
 
 @keyframes fade-in-anim {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 @keyframes fade-out-anim {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
+    0% { opacity: 1; }
+    100% { opacity: 0; }
 }
 </style>
